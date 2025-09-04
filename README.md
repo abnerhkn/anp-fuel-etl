@@ -1,4 +1,4 @@
-# anp-fuel-etl
+# Brazilian Fuel Prices ETL (ANP Data Pipeline)
 
 Pipeline de dados para ingestão, tratamento e modelagem dos preços de combustíveis da ANP (camadas **Bronze**, **Silver** e **Gold**), orquestrado com **Apache Airflow** e containerizado com **Docker**.
 
@@ -15,7 +15,7 @@ Pipeline de dados para ingestão, tratamento e modelagem dos preços de combust�
 
 ## 🏗️ Arquitetura
 
-![Arquitetura do Projeto](docs/architecture.png)
+![Arquitetura do Projeto](docs/architeture.png)
 
 ---
 
