@@ -15,7 +15,7 @@ Pipeline de dados para ingestão, tratamento e modelagem dos preços de combust�
 
 ## 🏗️ Arquitetura
 
-![Arquitetura do Projeto](docs/architecture.png)
+![Arquitetura do Projeto](docs/architeture.png)
 
 ---
 
