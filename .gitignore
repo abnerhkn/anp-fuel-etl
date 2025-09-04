@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+*.venv
+.env
+venv/
+env/
+*.egg-info/
+
+# Logs
+logs/
+*.log
+
+# Airflow
+airflow.cfg
+unittests.cfg
+webserver_config.py
+
+# Data
+data/bronze/*
+data/silver/*
+data/gold/*
+!data/.gitkeep
+
+# DBT
+dbt_project/target/
+dbt_project/dbt_modules/
+dbt_packages/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Docker
+docker/postgres_data/
+postgres_data/
