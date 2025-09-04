@@ -62,7 +62,7 @@ anp-fuel-etl/
 ## ✅ Status do Projeto
 - [x] Estrutura inicial do repositório
 - [x] Docker + Airflow funcionando
-- [ ] DAG Bronze (ingestão de dados da ANP)
-- [ ] DAG Silver (limpeza e padronização)
+- [x] DAG Bronze (ingestão de dados da ANP)
+- [x] DAG Silver (limpeza e padronização)
 - [ ] DAG Gold (modelagem dbt)
 - [ ] Dashboards (Streamlit/Metabase)
