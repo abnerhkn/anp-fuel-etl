@@ -79,5 +79,5 @@ anp-fuel-etl/
 ![Dashboards do Projeto](docs/evolucao_temporal.png)
 ![Dashboards do Projeto](docs/top_cidades.png)
 
-## 🎥 Demonstração em GIF
+## 🎥 Demonstração em Vídeo
 [Assista ao vídeo da demonstração](docs/video_projeto.mp4)
