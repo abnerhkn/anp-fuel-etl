@@ -64,5 +64,9 @@ anp-fuel-etl/
 - [x] Docker + Airflow funcionando
 - [x] DAG Bronze (ingestão de dados da ANP)
 - [x] DAG Silver (limpeza e padronização)
-- [ ] DAG Gold (modelagem dbt)
-- [ ] Dashboards (Streamlit/Metabase)
+- [x] Criar a tabela silver.precos_combustiveis no Postgres a partir dos .parquet
+- [x] Rodar dbt seed para carregar dim_regiao_estado.csv
+- [x] Rodar dbt run para materializar os modelos Gold
+- [x] DAG Gold (modelagem dbt)
+- [x] Realizar testes unitários
+- [ ] Dashboards (Streamlit)
