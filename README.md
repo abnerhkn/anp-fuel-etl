@@ -73,7 +73,7 @@ anp-fuel-etl/
 
 ---
 
-## 📊 Prints do Dashboard
+## Prints do Dashboard
 ![Dashboards do Projeto](docs/por_estado.png)
 ![Dashboards do Projeto](docs/por_regiao.png)
 ![Dashboards do Projeto](docs/evolucao_temporal.png)
