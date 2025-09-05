@@ -8,3 +8,5 @@ dbt-postgres==1.7.9
 protobuf>=4.25.0
 psycopg2-binary>=2.9.9
 unidecode
+streamlit
+plotly
