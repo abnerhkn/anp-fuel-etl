@@ -4,7 +4,7 @@ Pipeline de dados para ingestão, tratamento e modelagem dos preços de combust�
 
 ---
 
-## 🚀 Tecnologias
+## Tecnologias
 - **Apache Airflow** (orquestração)
 - **PostgreSQL** (metastore)
 - **dbt** (modelagem de dados)
@@ -13,13 +13,13 @@ Pipeline de dados para ingestão, tratamento e modelagem dos preços de combust�
 
 ---
 
-## 🏗️ Arquitetura
+## Arquitetura
 
 ![Arquitetura do Projeto](docs/architeture.png)
 
 ---
 
-## 📂 Estrutura de Pastas
+## Estrutura de Pastas
 ```
 anp-fuel-etl/
 ├── dags/              # DAGs do Airflow
@@ -39,7 +39,7 @@ anp-fuel-etl/
 
 ---
 
-## ▶️ Como rodar o projeto
+## Como rodar o projeto
 
 1. **Clone o repositório**
    ```bash
@@ -59,7 +59,7 @@ anp-fuel-etl/
 
 ---
 
-## ✅ Status do Projeto
+## Status do Projeto
 - [x] Estrutura inicial do repositório
 - [x] Docker + Airflow funcionando
 - [x] DAG Bronze (ingestão de dados da ANP)
@@ -69,4 +69,4 @@ anp-fuel-etl/
 - [x] Rodar dbt run para materializar os modelos Gold
 - [x] DAG Gold (modelagem dbt)
 - [x] Realizar testes unitários
-- [ ] Dashboards (Streamlit)
+- [x] Dashboards (Streamlit)
