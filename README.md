@@ -70,3 +70,14 @@ anp-fuel-etl/
 - [x] DAG Gold (modelagem dbt)
 - [x] Realizar testes unitários
 - [x] Dashboards (Streamlit)
+
+---
+
+## 📊 Prints do Dashboard
+![Dashboards do Projeto](docs/por_estado.png)
+![Dashboards do Projeto](docs/por_regiao.png)
+![Dashboards do Projeto](docs/evolucao_temporal.png)
+![Dashboards do Projeto](docs/top_cidades.png)
+
+## 🎥 Demonstração em GIF
+[Assista ao vídeo da demonstração](docs/video_projeto.mp4)
