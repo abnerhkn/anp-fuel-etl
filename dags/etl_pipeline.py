@@ -1,5 +1,6 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
 import sys, os
 
@@ -10,8 +11,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../etl/gold"))
 
 
 from ingest_anp import download_weekly_reports
-#from clean_data import process_silver
-#from build_star_schema import process_gold
+from clean_data import process_silver
+from load_to_postgres import load_to_postgres
 
 default_args = {
     "owner": "airflow",
@@ -35,15 +36,25 @@ with DAG(
         python_callable=download_weekly_reports,
     )
 
-    # silver_task = PythonOperator(
-    #     task_id="silver_processing",
-    #     python_callable=process_silver,
-    # )
-
-    # gold_task = PythonOperator(
-    #     task_id="gold_modeling",
-    #     python_callable=process_gold,
-    # )
-
+    silver_task = PythonOperator(
+        task_id="silver_export_raw",
+        python_callable=process_silver,
+    )
     
-    # bronze_task >> silver_task >> gold_task
+    gold_task = PythonOperator(
+        task_id="gold_modeling",
+        python_callable=load_to_postgres,
+    )
+    
+    task_dbt_run = BashOperator(
+    task_id="dbt_run",
+    bash_command=(
+        "cd /opt/airflow/dbt && "
+        "dbt seed --profiles-dir . && "
+        "dbt run --profiles-dir . && "
+        "dbt test --profiles-dir ."
+    ),
+)
+    
+    bronze_task >> silver_task >> gold_task >> task_dbt_run
+

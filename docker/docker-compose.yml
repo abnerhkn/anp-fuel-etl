@@ -13,7 +13,10 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
   airflow-webserver:
-    build: ./airflow
+    image: apache/airflow:2.8.1-python3.9
+    build: 
+      context: .
+      dockerfile: Dockerfile
     container_name: airflow_webserver
     depends_on:
       - postgres
@@ -23,16 +26,22 @@ services:
       AIRFLOW__CORE__FERNET_KEY: "H9dZrsyHcCn0qR1THt1C9X6tMC-wK9C2w8h6dyYzEEc="
       AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      
     volumes:
       - ../dags:/opt/airflow/dags
       - ../logs:/opt/airflow/logs
+      - ../etl:/opt/airflow/etl
       - ../plugins:/opt/airflow/plugins
       - ../data:/opt/airflow/data
+      - ../requirements:/opt/airflow/requirements
+      - ../dbt:/opt/airflow/dbt
     ports:
       - "43921:8080"
     command: webserver  
   airflow-init:
-    build: ./airflow
+    build: 
+      context: .
+      dockerfile: Dockerfile
     container_name: airflow_init
     depends_on:
       - postgres
@@ -46,10 +55,13 @@ services:
     volumes:
       - ../dags:/opt/airflow/dags
       - ../logs:/opt/airflow/logs
+      - ../etl:/opt/airflow/etl
       - ../plugins:/opt/airflow/plugins
       - ../data:/opt/airflow/data
   airflow-scheduler:
-    build: ./airflow
+    build: 
+      context: .
+      dockerfile: Dockerfile
     container_name: airflow_scheduler
     depends_on:
       - postgres
@@ -60,8 +72,11 @@ services:
     volumes:
       - ../dags:/opt/airflow/dags
       - ../logs:/opt/airflow/logs
+      - ../etl:/opt/airflow/etl
       - ../plugins:/opt/airflow/plugins
       - ../data:/opt/airflow/data
+      - ../requirements:/opt/airflow/requirements
+      - ../dbt:/opt/airflow/dbt
     command: scheduler  
 
 volumes:

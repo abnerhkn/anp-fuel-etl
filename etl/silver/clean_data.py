@@ -14,7 +14,7 @@ logging.basicConfig(
 
 
 def export_raw_municipios(bronze_file: str, raw_file: str):
-    """Exporta apenas a aba MUNICIPIOS (a partir de DATA INICIAL) para Parquet em Silver/Raw."""
+
     tmp = pd.read_excel(bronze_file, sheet_name="MUNICIPIOS", header=None)
 
     
@@ -32,9 +32,7 @@ def export_raw_municipios(bronze_file: str, raw_file: str):
 
 
 def normalize_raw_municipios(df: pd.DataFrame, normalized_file: str):
-    """Normaliza colunas e dados do DataFrame de MUNICIPIOS e salva em Silver/Raw_Normalized."""
 
-    
     df.columns = [
         unidecode(str(c)).strip().lower().replace(" ", "_")
         for c in df.columns
@@ -80,7 +78,7 @@ def normalize_raw_municipios(df: pd.DataFrame, normalized_file: str):
 
 
 def process_silver():
-    """Percorre arquivos do Bronze, gera Raw (MUNICIPIOS) e Raw_Normalized."""
+
     for year in os.listdir(BRONZE_DIR):
         year_path = os.path.join(BRONZE_DIR, year)
         if not os.path.isdir(year_path):

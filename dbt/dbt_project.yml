@@ -1,0 +1,17 @@
+name: "anp_fuel_etl"
+version: "1.0.0"
+config-version: 2
+
+profile: "anp_fuel_etl"
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+
+models:
+  anp_fuel_etl:
+    silver:
+      +schema: silver
+      +materialized: view
+    gold:
+      +schema: gold
+      +materialized: table

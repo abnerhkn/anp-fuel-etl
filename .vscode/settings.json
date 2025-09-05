@@ -1,5 +1,8 @@
 {
   "python.analysis.extraPaths": [
-    "./etl/bronze"
+    "./etl/bronze",
+    "./etl",
+    "./etl/silver",
+    "./etl/gold"
   ]
 }

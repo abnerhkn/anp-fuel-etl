@@ -1,0 +1,17 @@
+-- models/silver/precos_combustiveis.sql
+select
+    data_inicial,
+    data_final,
+    estado,
+    municipio,
+    produto,
+    numero_de_postos_pesquisados,
+    unidade_de_medida,
+    preco_medio_revenda,
+    desvio_padrao_revenda,
+    preco_minimo_revenda,
+    preco_maximo_revenda,
+    coeficiente_variacao_revenda,
+    moeda,
+    medida
+from {{ source('silver', 'precos_combustiveis') }}

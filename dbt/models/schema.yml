@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: silver
+    schema: silver
+    tables:
+      - name: precos_combustiveis
+
+models:
+  - name: precos_combustiveis
+    description: "Tabela base com preços de combustíveis por município (camada Silver)."
+
+  - name: precos_por_municipio
+    description: "Agregação semanal de preços médios de combustíveis por município."
+    columns:
+      - name: municipio
+        tests: [not_null]
+      - name: preco_medio_semana
+        tests: [not_null]
+
+  - name: precos_por_estado
+    description: "Agregação semanal de preços médios de combustíveis por estado."
+    columns:
+      - name: estado
+        tests: [not_null]
+
+  - name: precos_por_regiao
+    description: "Agregação semanal de preços médios de combustíveis por região."
+    columns:
+      - name: regiao
+        tests: [not_null]

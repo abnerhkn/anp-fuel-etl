@@ -1,0 +1,14 @@
+
+    
+    
+    
+    create table "airflow"."public"."dim_regiao_estado" ("estado" text,"regiao" text)
+  ;
+    -- dbt seed --
+    
+          insert into "airflow"."public"."dim_regiao_estado" ("estado", "regiao") values
+          (%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s)
+      
+
+;
+  
